@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    style="@style/Match"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="org.kozlowski.githubdemo.ui.main.MainActivity">
+
+    <FrameLayout
+        style="@style/Match"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/pbProgress"
+            style="@style/Wrap"
+            android:layout_gravity="center">
+        </ProgressBar>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_repositories"
+            style="@style/Match"
+            android:clipToPadding="false"/>
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>

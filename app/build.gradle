@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+    defaultConfig {
+        applicationId "org.kozlowski.githubdemo"
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    //butterknife
+    def butterKnifeVersion = '8.6.0'
+    compile "com.jakewharton:butterknife:$butterKnifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+    //dagger
+    def daggerVersion = '2.9'
+    compile "com.google.dagger:dagger:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+//    provided 'javax.annotation:jsr250-api:1.0'
+
+    //*******************************************************************
+    //********************** rx 1 ***************************************
+//    def rxAndroidVersion = '1.2.1'
+//    compile "io.reactivex:rxandroid:$rxAndroidVersion"
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+//    def rxJavaVersion = '1.2.1'
+//    compile "io.reactivex:rxjava:$rxJavaVersion"
+    //********************** rx 2 ***************************************
+    def rx2AndroidVersion = '2.0.1'
+    def rx2JavaVersion = '2.1.0'
+    compile "io.reactivex.rxjava2:rxjava:$rx2JavaVersion"
+    compile "io.reactivex.rxjava2:rxandroid:$rx2AndroidVersion"
+    //******************************************************************
+    //thirtyinch
+    def thirtyinchVersion = '0.8.0'
+    compile "net.grandcentrix.thirtyinch:thirtyinch:$thirtyinchVersion"
+    //retrofit2
+    def retrofitVersion = '2.3.0'
+    compile "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    compile "com.squareup.okhttp3:okhttp:$retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+
+}

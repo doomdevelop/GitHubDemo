@@ -5,7 +5,7 @@ package org.kozlowski.githubdemo.util;
  */
 
 public class Constants {
-    public static final String USER = "xing";
-    public static final String ACCESS_TOKEN = "a2c04a21b48d8f098ac9b928a43414a78baaae68";
+    public static final String USER = "doomdevelop";
+    public static final String ACCESS_TOKEN = "d5176fcb9f614532336f353f8b5f72328555acb8";
     public static final Integer PER_PAGE = 10;
 }

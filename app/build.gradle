@@ -41,14 +41,6 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
 //    provided 'javax.annotation:jsr250-api:1.0'
 
-    //*******************************************************************
-    //********************** rx 1 ***************************************
-//    def rxAndroidVersion = '1.2.1'
-//    compile "io.reactivex:rxandroid:$rxAndroidVersion"
-    // Because RxAndroid releases are few and far between, it is recommended you also
-    // explicitly depend on RxJava's latest version for bug fixes and new features.
-//    def rxJavaVersion = '1.2.1'
-//    compile "io.reactivex:rxjava:$rxJavaVersion"
     //********************** rx 2 ***************************************
     def rx2AndroidVersion = '2.0.1'
     def rx2JavaVersion = '2.1.0'

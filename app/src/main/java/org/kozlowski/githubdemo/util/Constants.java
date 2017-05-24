@@ -5,7 +5,8 @@ package org.kozlowski.githubdemo.util;
  */
 
 public class Constants {
-    public static final String USER = "doomdevelop";
-    public static final String ACCESS_TOKEN = "d5176fcb9f614532336f353f8b5f72328555acb8";
+    //Set here your authentication data
+    public static final String USER = "your_github_user";
+    public static final String ACCESS_TOKEN = "your_access_token";
     public static final Integer PER_PAGE = 10;
 }

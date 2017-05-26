@@ -6,6 +6,7 @@ import org.kozlowski.githubdemo.di.DaggerMainComponent;
 import org.kozlowski.githubdemo.di.MainComponent;
 import org.kozlowski.githubdemo.di.MainModule;
 import org.kozlowski.githubdemo.di.NetModule;
+import org.kozlowski.githubdemo.di.SecureModule;
 
 /**
  * Created by and on 16.05.17.
@@ -22,6 +23,7 @@ public class MyApplication extends Application {
         //The deprecation is intended to notify you of unused methods and modules and can be ignore.
         //http://stackoverflow.com/questions/36521302/dagger-2-2-component-builder-module-method-deprecated/
         mainComponent  = DaggerMainComponent.builder().mainModule(new MainModule(this))
+            .secureModule(new SecureModule())
             .netModule(new NetModule(getString(R.string.github_url)))
             .build();
     }

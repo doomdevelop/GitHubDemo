@@ -17,5 +17,11 @@ public interface MainView extends Presenter.View {
     void initRecyclerView();
     void showRepos(List<RepoItem> repoItems);
     void showUrlInBrowser(String url);
-    void changeProgressVisibility(boolean disable);
+    void changeProgressVisibility(boolean gone);
+    void changeRepoListLayoutVisibility(boolean gone);
+    void changeTokenLayoutVisibility(boolean gone);
+    void initTextChangeListener();
+    void removeTextChangeListener();
+    void changeButtonConnect(boolean enabled);
+
 }

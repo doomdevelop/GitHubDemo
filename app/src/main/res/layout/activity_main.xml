@@ -3,16 +3,44 @@
     style="@style/Match"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:padding="10dp"
     tools:context="org.kozlowski.githubdemo.ui.main.MainActivity">
 
+    <RelativeLayout
+        android:id="@+id/rl_tokenAuthLaoyut"
+        style="@style/MatchWidth"
+        android:visibility="visible">
+        <EditText
+            android:id="@+id/et_userName"
+            android:hint="@string/pasteUserText"
+            style="@style/MatchWidth"/>
+
+        <EditText
+            android:id="@+id/et_token"
+            style="@style/MatchWidth"
+            android:layout_below="@+id/et_userName"
+            android:layout_alignParentLeft="true"
+            android:hint="@string/pasteTokenText"/>
+
+        <Button
+            android:id="@+id/btn_connect"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/et_token"
+            android:text="@string/get_repos_btn_text"
+            />
+    </RelativeLayout>
+
     <FrameLayout
+        android:id="@+id/fl_listLayout"
         style="@style/Match"
         android:gravity="center"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <ProgressBar
-            android:id="@+id/pbProgress"
+            android:id="@+id/pb_progress"
             style="@style/Wrap"
             android:layout_gravity="center">
         </ProgressBar>

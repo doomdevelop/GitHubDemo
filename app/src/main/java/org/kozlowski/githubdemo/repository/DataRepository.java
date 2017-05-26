@@ -2,7 +2,7 @@ package org.kozlowski.githubdemo.repository;
 
 import org.kozlowski.githubdemo.data.DaTaRepoMapper;
 import org.kozlowski.githubdemo.data.model.RepoData;
-import org.kozlowski.githubdemo.data.remote.service.RepoService;
+import org.kozlowski.githubdemo.data.model.User;
 import org.kozlowski.githubdemo.ui.component.recyclerview.RepoItem;
 import org.kozlowski.githubdemo.util.Constants;
 
@@ -21,10 +21,12 @@ import io.reactivex.functions.Function;
 @Singleton
 public class DataRepository {
     private final ApiRepository apiRepository;
+    private final LocalRepository localRepository;
 
     @Inject
-    public DataRepository(ApiRepository apiRepository) {
+    public DataRepository(ApiRepository apiRepository,LocalRepository localRepository) {
         this.apiRepository = apiRepository;
+        this.localRepository = localRepository;
     }
 
     public Observable<List<RepoItem>> listRepositories(String user, String accessToken){
@@ -45,5 +47,13 @@ public class DataRepository {
                 return DaTaRepoMapper.transform(repoDatas);
             }
         };
+    }
+
+    public Observable<Boolean> writeUser(User user){
+        return localRepository.writeUser(user);
+    }
+
+    public Observable<User> readUser(){
+        return localRepository.readUser();
     }
 }

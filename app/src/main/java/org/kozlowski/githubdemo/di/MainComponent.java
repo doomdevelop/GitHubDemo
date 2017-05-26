@@ -11,7 +11,7 @@ import dagger.Component;
  * Created by and on 16.05.17.
  */
 @Singleton
-@Component(modules={MainModule.class, NetModule.class})
+@Component(modules={MainModule.class, NetModule.class, SecureModule.class})
 public interface MainComponent {
     void inject(MainActivity activity);
 }

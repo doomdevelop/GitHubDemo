@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.securepreferences.SecurePreferences;
 
 import org.kozlowski.githubdemo.MyApplication;
 import org.kozlowski.githubdemo.ui.main.MainPresenter;
@@ -38,11 +39,6 @@ public class NetModule {
         this.mBaseUrl = baseUrl;
     }
 
-    @Provides
-    @Singleton
-    SharedPreferences providesSharedPreferences(MyApplication application) {
-        return PreferenceManager.getDefaultSharedPreferences(application);
-    }
 
     @Provides
     @Singleton

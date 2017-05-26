@@ -1,11 +1,10 @@
 package org.kozlowski.githubdemo.di;
 
-import android.app.Application;
+import com.securepreferences.SecurePreferences;
 
 import org.kozlowski.githubdemo.MyApplication;
 import org.kozlowski.githubdemo.repository.LocalRepository;
 
-import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -21,8 +20,8 @@ public class MainModule {
 
     @Provides
     @Singleton
-    public LocalRepository provideLocalRepository() {
-        return new LocalRepository();
+    public LocalRepository provideLocalRepository(SecurePreferences securePreferences) {
+        return new LocalRepository(securePreferences);
     }
 
     public MainModule(MyApplication application) {

@@ -5,4 +5,7 @@
     <string name="repo_login_owner">login of the owner:</string>
     <string name="github_url">https://api.github.com/</string>
     <string name="access_token_param_name">access_token</string>
+    <string name="pasteTokenText">Paste your generated token here</string>
+    <string name="get_repos_btn_text">connect</string>
+    <string name="pasteUserText">github user</string>
 </resources>

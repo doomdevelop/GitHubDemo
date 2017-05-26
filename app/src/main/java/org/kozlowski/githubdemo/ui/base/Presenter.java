@@ -26,19 +26,15 @@ public abstract class Presenter<T extends Presenter.View> {
     public void initialize(Bundle extras) {
     }
 
-    public void start() {
+    public void onAttachView() {
         isViewAlive.set(true);
     }
 
-    public void finalizeView() {
+    public void onDetachView() {
         isViewAlive.set(false);
     }
 
     public interface View {
-        void start();
-
-        void finish();
-
         void showError(String errorMessage);
     }
 }

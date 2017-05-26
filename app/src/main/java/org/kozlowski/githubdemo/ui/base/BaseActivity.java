@@ -38,7 +38,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Presente
     protected void onStart() {
         super.onStart();
         if (presenter != null) {
-            presenter.start();
+            presenter.onAttachView();
         }
     }
 
@@ -51,7 +51,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Presente
     protected void onStop() {
         super.onStop();
         if (presenter != null) {
-            presenter.finalizeView();
+            presenter.onDetachView();
         }
     }
 
